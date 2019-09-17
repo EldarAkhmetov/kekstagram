@@ -1,0 +1,24 @@
+{
+  "name": "kekstagram",
+  "version": "1.0.0",
+  "description": "Проект \"Кекстаграм\"",
+  "scripts": {
+    "test": "eslint js/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EldarAkhmetov/kekstagram.git"
+  },
+  "author": "Eldar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EldarAkhmetov/kekstagram/issues"
+  },
+  "engines": {
+    "node": "8.11"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-htmlacademy": "^0.5.2"
+  }
+}
