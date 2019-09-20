@@ -34,7 +34,7 @@
 
             <fieldset class="img-upload__start">
               <input type="file" id="upload-file" class="img-upload__input visually-hidden" name="filename" required>
-              <label for="upload-file" class="img-upload__label img-upload__control">Загрузить</label>
+              <label for="upload-file" class="img-upload__label img-upload__control" tabindex="0">Загрузить</label>
             </fieldset>
 
             <div class="img-upload__overlay hidden">
@@ -110,8 +110,8 @@
                 </fieldset>
 
                 <fieldset class="img-upload__text text">
-                  <input class="text__hashtags" name="hashtags" placeholder="#хэш-тег">
-                  <textarea class="text__description" name="description" placeholder="Ваш комментарий..." maxlength="140"></textarea>
+                  <input class="text__hashtags" name="hashtags" placeholder="#хэш-тег" tabindex="0">
+                  <textarea class="text__description" name="description" placeholder="Ваш комментарий..." maxlength="140" tabindex="0"></textarea>
                 </fieldset>
 
                 <button type="submit" class="img-upload__submit" id="upload-submit">Опубликовать</button>
