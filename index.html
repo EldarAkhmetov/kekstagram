@@ -67,14 +67,14 @@
                     <li class="effects__item">
                       <input type="radio" class="effects__radio visually-hidden" name="effect" id="effect-none" value="none" checked>
                       <label for="effect-none" class="effects__label">
-                        <span class="effects__preview effects__preview--none">Превью фото без эффекта</span>
+                        <span class="effects__preview effects__preview--none" tabindex="0">Превью фото без эффекта</span>
                         Оригинал
                       </label>
                     </li>
                     <li class="effects__item">
                       <input type="radio" class="effects__radio visually-hidden" name="effect" id="effect-chrome" value="chrome">
                       <label for="effect-chrome" class="effects__label">
-                        <span class="effects__preview effects__preview--chrome">Превью эффекта Хром</span>
+                        <span class="effects__preview effects__preview--chrome" tabindex="0">Превью эффекта Хром</span>
                         Хром
                       </label>
                     </li>
@@ -208,6 +208,13 @@
       <p class="social__text"></p>
     </li>
   </template>
-  <script src="js/pictures.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/renderers.js"></script>
+  <script src="js/render-post.js"></script>
+  <script src="js/resize.js"></script>
+  <script src="js/upload-picture.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/create-gallery.js"></script>
 </body>
 </html>
