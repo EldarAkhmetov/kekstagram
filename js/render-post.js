@@ -9,7 +9,8 @@
   };
 
   var popupPressEscHandler = function(evt) {
-    window.util.isKeydownEsc(evt, hideBigPicturePopup, true);
+    var CONDITION_NOT_NECESSARY = true;
+    window.util.isKeydownEsc(evt, hideBigPicturePopup, CONDITION_NOT_NECESSARY);
   };
 
   var showBigPicture = function(picture) {
