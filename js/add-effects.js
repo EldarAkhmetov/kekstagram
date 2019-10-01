@@ -65,6 +65,7 @@
     var calculateEffectLevel = function(inputValue) {
       var effectName = imgUploadPreview.className.split('--')[EFFECT_INDEX];
       if (!effectName) {
+        imgUploadPreview.style.filter = '';
         return;
       }
 
