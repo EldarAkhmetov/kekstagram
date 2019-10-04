@@ -51,6 +51,7 @@
     var imgUploadPreview = img.querySelector('.img-upload__preview img');
 
     var scaleValue = img.querySelector('.scale__value');
+
     var scalePin = img.querySelector('.scale__pin');
     var scaleLevel = img.querySelector('.scale__level');
 
@@ -111,6 +112,7 @@
       document.addEventListener('mousemove', mouseMoveHandler);
       document.addEventListener('mouseup', mouseUpHandler);
     });
+
 
     for (var i = 0; i < effects.length; i++) {
       effects[i].addEventListener('change', function(evt) {

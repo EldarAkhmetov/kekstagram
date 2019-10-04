@@ -20,12 +20,12 @@
     bigPicture.querySelector('.social__footer-text').value = '';
     bigPicture.querySelector('.social__footer-text').focus();
     bigPicture.querySelector('.big-picture__img').querySelector('img').src = picture.url;
-    bigPicture.querySelector('.comments-count').textContent = picture.comment.length;
+    bigPicture.querySelector('.comments-count').textContent = picture.comments.length;
     bigPicture.querySelector('.likes-count').textContent = picture.likes;
     bigPicture.querySelector('.social__caption').textContent = picture.description;
     bigPicture.querySelector('.social__comment-count').classList.add('visually-hidden');
     bigPicture.querySelector('.social__loadmore').classList.add('visually-hidden');
-    bigPicture.querySelector('.social__comments').appendChild(fillBlock(picture.comment, window.render.comment));
+    bigPicture.querySelector('.social__comments').appendChild(fillBlock(picture.comments, window.render.comment));
     bigPicture.querySelector('.big-picture__cancel').addEventListener('click', function(evt) {
       evt.preventDefault();
       hideBigPicturePopup();

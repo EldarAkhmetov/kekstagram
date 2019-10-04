@@ -67,6 +67,7 @@
     return arr;
   };
 
+
   window.getPhotosArray = getPhotosArray;
 
 })();
