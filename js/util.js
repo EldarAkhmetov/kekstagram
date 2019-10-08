@@ -19,9 +19,22 @@
     }
   };
 
+  var getNonRepeatNumbers = function(maxValue, arrLength) {
+    var arr = [];
+    var newArrayNumber = function(value) {
+      return arr.indexOf(value) === -1 ? value : newArrayNumber(getRandomValue(0, maxValue));
+    };
+    for (var i = 0; i < arrLength; i++) {
+      arr[i] = newArrayNumber(getRandomValue(0, maxValue));
+    }
+
+    return arr;
+  };
+
   window.util = {
     getRandomValue: getRandomValue,
     getRandomArrayValue: getRandomArrayValue,
-    isKeydownEsc: isKeydownEsc
+    isKeydownEsc: isKeydownEsc,
+    getNonRepeatNumbers: getNonRepeatNumbers
   };
 })();
