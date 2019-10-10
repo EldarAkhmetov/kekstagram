@@ -5,6 +5,7 @@
   imgFilters.classList.remove('img-filters--inactive');
   var form = imgFilters.querySelector('.img-filters__form');
   var NEW_FILTER_LENGTH = 10;
+  var FILTER_INDEX = 1;
 
   var getFilterPopular = function(pictures) {
     return pictures.slice();
@@ -20,7 +21,6 @@
   };
 
   var getFilterDiscussed = function(pictures) {
-
     return pictures.slice().sort(function(left, right) {
       var commentDiff = right.comments.length - left.comments.length;
       if (commentDiff === 0) {
@@ -30,7 +30,6 @@
     });
   };
 
-
   var Filters = {
     popular: getFilterPopular,
     new: getFilterNew,
@@ -39,8 +38,6 @@
   };
 
   var buttons = form.querySelectorAll('.img-filters__button');
-
-
 
   var pictures = document.querySelector('.pictures');
 
@@ -53,13 +50,9 @@
         buttons[i].classList.remove('img-filters__button--active');
       }
       button.classList.add('img-filters__button--active');
-      newFilter(evt.target.id.split('-')[1]);
+      window.debounce(newFilter)(evt.target.id.split('-')[FILTER_INDEX]);
     });
   };
-
-  for (var i = 0; i < buttons.length; i++) {
-    filterChangeHandler(buttons[i]);
-  }
 
   var newFilter = function(filter) {
     window.backend.loadHandler(function(picturesArray) {
@@ -76,4 +69,7 @@
 
   newFilter('popular');
 
+  for (var i = 0; i < buttons.length; i++) {
+    filterChangeHandler(buttons[i]);
+  }
 })();

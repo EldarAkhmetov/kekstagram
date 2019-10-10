@@ -6,8 +6,9 @@
 
   var form = document.querySelector('.img-upload__form');
   var inputHashtag = form.querySelector('.text__hashtags');
+  var submitButton = form.querySelector('.img-upload__submit');
 
-  var checkHashtag = function(hashtag) {
+  var isHashtagValid = function(hashtag) {
     if (hashtag.length === 0) {
       return true;
     } else if (hashtag.length > MAX_HASHTAG_LENGTH) {
@@ -39,7 +40,7 @@
     }
 
     for (var i = 0; i < hashtags.length; i++) {
-      var validHashtag = checkHashtag(hashtags[i]);
+      var validHashtag = isHashtagValid(hashtags[i]);
       if (!validHashtag) {
         break;
       }
@@ -50,8 +51,9 @@
 
     }
 
-    if (inputHashtag.validationMessage) {
+    if (inputHashtag.validationMessage !== '') {
       evt.preventDefault();
+      inputHashtag.reportValidity();
     }
 
   };
@@ -60,6 +62,6 @@
     inputHashtag.setCustomValidity('');
   };
 
-  form.addEventListener('submit', submitFormHandler);
+  submitButton.addEventListener('click', submitFormHandler);
   inputHashtag.addEventListener('input', clearCustomValidity);
 })();
